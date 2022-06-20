@@ -93,8 +93,6 @@
   const server = http.createServer()
 
   server.on('request', (req, res) => {
-
-
     const url = (req.url === '/' ? '/index.html' : req.url)
     const readPath = path.join(__dirname, '../html', url)
     console.log(readPath, req.url, req.url === '/')
@@ -117,12 +115,10 @@
         res.end('<h2>404 Not found.</h2>')
       }
     })
+      })
 
-  })
-
-  server.listen(8080, () => {
-    console.log('server is running at http://localhost:8080')
-  })
+    server.listen(8080, () => {
+  	console.log('server is running at http://localhost:8080')
+    })
   ```
 
-  ​
